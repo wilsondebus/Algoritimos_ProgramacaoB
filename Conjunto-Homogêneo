@@ -1,0 +1,32 @@
+#include<stdio.h>
+struct vendedor {
+int cod;
+float salario;
+float vendas;
+float comissao;
+};
+int main (){
+
+    struct vendedor v;
+
+    printf("Codido do vendedor: ");
+    scanf("%i", &v.cod);
+    printf("Salario do vendedor: ");
+    scanf("%f", &v.salario);
+    printf("Vendas do vendedor: ");
+    scanf("%f", &v.vendas);
+
+        if(v.vendas < 1000){
+            v.comissao = (v.salario * 0.03) + v.salario;
+        }
+        else if(v.vendas >= 1000 && v.vendas < 2000){
+            v.comissao = (v.salario * 0.05) + v.salario;
+        }
+        else{
+            v.comissao = (v.salario * 0.10) + v.salario;
+        }
+
+        printf("\n\tVendedor \nCod: %i \nVendas: %.f \nSalario Fixo: %.f \nSalario Total: %.f", v.cod, v.vendas, v.salario, v.comissao);
+
+return 0;
+}
